@@ -12,6 +12,7 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="6dp"
             android:text="Atualizar ou Deletar Paciente"
             android:textAlignment="center"
             android:textSize="24sp" />
@@ -20,6 +21,7 @@
             android:id="@+id/editTextText8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
             android:text="Name" />
@@ -28,6 +30,7 @@
             android:id="@+id/editTextText9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
             android:text="Name" />
@@ -36,6 +39,7 @@
             android:id="@+id/editTextText10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
             android:text="Name" />
@@ -44,6 +48,7 @@
             android:id="@+id/editTextText11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
             android:text="Name" />
@@ -52,6 +57,7 @@
             android:id="@+id/editTextText12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
             android:text="Name" />
@@ -60,12 +66,14 @@
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:text="Atualizar Paciente" />
 
         <Button
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:text="Deletar Paciente" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
