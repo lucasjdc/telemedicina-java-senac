@@ -42,4 +42,10 @@ public class PacientesAdapter extends RecyclerView.Adapter<PacientesAdapter.View
     public int getItemCount() {
         return pacientes.size();
     }
+
+    public void atualizarLista(List<Paciente> novosPacientes) {
+        pacientes.clear();
+        pacientes.addAll(novosPacientes);
+        notifyDataSetChanged(); // Notifica que a lista foi alterada
+    }
 }

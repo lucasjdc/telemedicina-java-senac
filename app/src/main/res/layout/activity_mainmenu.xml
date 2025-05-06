@@ -12,21 +12,24 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:text="Menu Principal"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
         <Button
             android:id="@+id/btnRegistrarPaciente"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="12dp"
             android:text="Registro de Pacientes" />
 
         <Button
             android:id="@+id/btnAtualizarDeletar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="12dp"
             android:text="Atualizar ou Deletar  Paciente" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

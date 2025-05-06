@@ -1,13 +1,15 @@
 package br.senac.telemedicina.model;
 
 public class Paciente {
+    private int id;
     private String nome;
-    private String idade;
+    private int idade;
     private String pressao;
     private String glicose;
     private String colesterol;
 
-    public Paciente(String nome, String idade, String pressao, String glicose, String colesterol) {
+    public Paciente(int id, String nome, int idade, String pressao, String glicose, String colesterol) {
+        this.id = id;
         this.nome = nome;
         this.idade = idade;
         this.pressao = pressao;
@@ -15,11 +17,14 @@ public class Paciente {
         this.colesterol = colesterol;
     }
 
+    public int getId(){
+        return id;
+    }
     public String getNome() {
         return nome;
     }
 
-    public String getIdade() {
+    public int getIdade() {
         return idade;
     }
 

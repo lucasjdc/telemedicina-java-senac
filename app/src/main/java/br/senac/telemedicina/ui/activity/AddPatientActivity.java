@@ -3,20 +3,15 @@ package br.senac.telemedicina.ui.activity;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
-
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import br.senac.telemedicina.R;
 import br.senac.telemedicina.model.Paciente;
 import br.senac.telemedicina.ui.recyclerview.adapter.PacientesAdapter;
 
 public class AddPatientActivity extends AppCompatActivity {
-    private List<Paciente> pacientesList = new ArrayList<>();
     private PacientesAdapter pacientesAdapter;
 
     @Override
@@ -30,23 +25,22 @@ public class AddPatientActivity extends AppCompatActivity {
         EditText glicoseEditText = findViewById(R.id.editTextglicose_addpatient);
         EditText colesterolEditText = findViewById(R.id.editTextcolesterol_addpatient);
         Button addButton = findViewById(R.id.btnAddNovoPaciente);
-
         RecyclerView recyclerView = findViewById(R.id.recyclerViewPacientes);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        pacientesAdapter = new PacientesAdapter(pacientesList);
         recyclerView.setAdapter(pacientesAdapter);
 
         addButton.setOnClickListener(v -> {
-            Paciente paciente = new Paciente(
-                    nomeEditText.getText().toString(),
-                    idadeEditText.getText().toString(),
-                    pressaoEditText.getText().toString(),
-                    glicoseEditText.getText().toString(),
-                    colesterolEditText.getText().toString()
-            );
+            String nome = nomeEditText.getText().toString();
+            int idade = Integer.parseInt(idadeEditText.getText().toString());
+            String pressao = pressaoEditText.getText().toString();
+            String glicose = glicoseEditText.getText().toString();
+            String colesterol = colesterolEditText.getText().toString();
 
-            pacientesList.add(paciente);
-            pacientesAdapter.notifyItemInserted(pacientesList.size() - 1);
+            Paciente paciente = new Paciente(nome, idade, pressao, glicose, colesterol);
+
+            // Adiciona o paciente ao ViewModel
+
+            Toast.makeText(this, "Paciente cadastrado com sucesso!", Toast.LENGTH_SHORT).show();
         });
     }
 }
