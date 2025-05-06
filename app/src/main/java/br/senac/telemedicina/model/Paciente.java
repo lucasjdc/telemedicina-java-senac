@@ -17,6 +17,14 @@ public class Paciente {
         this.colesterol = colesterol;
     }
 
+    public Paciente(String nome, int idade, String pressao, String glicose, String colesterol) {
+        this.nome = nome;
+        this.idade = idade;
+        this.pressao = pressao;
+        this.glicose = glicose;
+        this.colesterol = colesterol;
+    }
+
     public int getId(){
         return id;
     }
