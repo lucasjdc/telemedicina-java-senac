@@ -7,6 +7,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import br.senac.telemedicina.R;
 import br.senac.telemedicina.database.DBHelper;
 
@@ -38,7 +43,8 @@ public class RegisterUserActivity extends AppCompatActivity {
         ContentValues values = new ContentValues();
 
         values.put("nome_usuario", username);
-        values.put("senha_hash", password);
+        String senhaHash = gerarHashSenhaSHA256(password);
+        values.put("senha_hash", senhaHash);
 
         long id  = db.insert("Usuario", null, values);
         db.close();
@@ -48,6 +54,25 @@ public class RegisterUserActivity extends AppCompatActivity {
             finish();
         } else {
             Toast.makeText(this, "Erro ao cadastrar. Nome de usuário já existe?", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private String gerarHashSenhaSHA256(String senha) {
+        try {
+            MessageDigest digest = MessageDigest.getInstance("SHA-256");
+            byte[] hash = digest.digest(senha.getBytes(StandardCharsets.UTF_8));
+
+            StringBuilder hexString = new StringBuilder();
+            for (byte b : hash) {
+                String hex = Integer.toHexString(0xff & b);
+                if (hex.length() == 1) hexString.append('0');
+                hexString.append(hex);
+            }
+
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return senha; // fallback (não recomendado)
         }
     }
 }

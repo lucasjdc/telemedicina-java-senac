@@ -30,7 +30,7 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/editTextUsuario_activity_login"
+            android:id="@+id/editText_nomeUsuario_activity_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -38,7 +38,7 @@
             android:hint="Usuário" />
 
         <EditText
-            android:id="@+id/editTextSenha_activity_login"
+            android:id="@+id/editText_senha_activity_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
