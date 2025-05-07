@@ -3,7 +3,6 @@ package br.senac.telemedicina.ui.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
 import br.senac.telemedicina.R;
 
@@ -31,9 +30,8 @@ public class MainMenuActivity extends AppCompatActivity {
         });
 
         btnEdit.setOnClickListener(v -> {
-            Intent intent = new Intent(MainMenuActivity.this, EditDeletePatientActivity.class);
+            Intent intent = new Intent(MainMenuActivity.this, ListPatientsActivity.class);
             startActivity(intent);
         });
-
     }
 }

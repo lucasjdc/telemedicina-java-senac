@@ -18,7 +18,7 @@
             android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextText8"
+            android:id="@+id/editText_nomePaciente_activity_editdeletepatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
@@ -27,7 +27,7 @@
             android:text="Name" />
 
         <EditText
-            android:id="@+id/editTextText9"
+            android:id="@+id/editText_idadePaciente_activity_editdeletepatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
@@ -36,7 +36,7 @@
             android:text="Name" />
 
         <EditText
-            android:id="@+id/editTextText10"
+            android:id="@+id/editText_pressaoArterial_activity_editdeletepatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
@@ -45,7 +45,7 @@
             android:text="Name" />
 
         <EditText
-            android:id="@+id/editTextText11"
+            android:id="@+id/editText_glicose_activity_editdeletepatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
@@ -54,7 +54,7 @@
             android:text="Name" />
 
         <EditText
-            android:id="@+id/editTextText12"
+            android:id="@+id/editText_colesterol_activity_editdeletepatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
@@ -63,14 +63,14 @@
             android:text="Name" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btn_atualizar_activity_editdeletepatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="Atualizar Paciente" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btn_apagar_activity_editdeletepatient"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
