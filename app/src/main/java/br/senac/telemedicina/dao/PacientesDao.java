@@ -58,7 +58,7 @@ public class PacientesDao {
         values.put("glicose", paciente.getGlicose());
         values.put("colesterol", paciente.getColesterol());
 
-        long id = db.insert("pacientes", null, values);
+        long id = db.insert("Paciente", null, values);
         db.close();
         return id;
     }
