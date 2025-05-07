@@ -36,7 +36,7 @@ public class Paciente {
         return idade;
     }
 
-    public String getPressao() {
+    public String getPressaoArterial() {
         return pressao;
     }
 

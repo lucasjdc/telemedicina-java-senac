@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -89,8 +90,12 @@ public class EditDeletePatientActivity extends AppCompatActivity {
         String glicose = glicoseEditText.getText().toString();
         String colesterol = colesterolEditText.getText().toString();
 
+        Log.d("EditPatientActivity", "Tentando atualizar paciente com ID: " + pacienteId);
+        Log.d("EditPatientActivity", "Nome: " + nome + ", Idade: " + idadeStr + ", Pressão: " + pressao + ", Glicose: " + glicose + ", Colesterol: " + colesterol);
+
         if (nome.isEmpty() || idadeStr.isEmpty()) {
             Toast.makeText(this, "Nome e idade são obrigatórios", Toast.LENGTH_SHORT).show();
+            Log.w("EditPatientActivity", "Campos obrigatórios (nome ou idade) não preenchidos.");
             return;
         }
 
@@ -105,30 +110,38 @@ public class EditDeletePatientActivity extends AppCompatActivity {
         values.put("colesterol", colesterol);
 
         int rowsAffected = db.update("Paciente", values, "_id = ?", new String[]{pacienteId});
+        Log.d("EditPatientActivity", "Número de linhas afetadas na atualização: " + rowsAffected);
         db.close();
 
         if (rowsAffected > 0) {
             Toast.makeText(this, "Paciente atualizado com sucesso", Toast.LENGTH_SHORT).show();
+            Log.i("EditPatientActivity", "Paciente com ID " + pacienteId + " atualizado com sucesso.");
             finish(); // Volta para a ListPatientsActivity
         } else {
             Toast.makeText(this, "Erro ao atualizar paciente", Toast.LENGTH_SHORT).show();
+            Log.e("EditPatientActivity", "Erro ao atualizar paciente com ID " + pacienteId + ".");
         }
     }
 
     private void apagarPaciente() {
+        Log.d("EditPatientActivity", "Tentando apagar paciente com ID: " + pacienteId);
         if (pacienteId != null) {
             SQLiteDatabase db = dbHelper.getWritableDatabase();
             int rowsDeleted = db.delete("Paciente", "_id = ?", new String[]{pacienteId});
+            Log.d("EditPatientActivity", "Número de linhas deletadas: " + rowsDeleted);
             db.close();
 
             if (rowsDeleted > 0) {
                 Toast.makeText(this, "Paciente apagado com sucesso", Toast.LENGTH_SHORT).show();
+                Log.i("EditPatientActivity", "Paciente com ID " + pacienteId + " apagado com sucesso.");
                 finish(); // Volta para a ListPatientsActivity
             } else {
                 Toast.makeText(this, "Erro ao apagar paciente", Toast.LENGTH_SHORT).show();
+                Log.e("EditPatientActivity", "Erro ao apagar paciente com ID " + pacienteId + ".");
             }
         } else {
             Toast.makeText(this, "ID do paciente não encontrado", Toast.LENGTH_SHORT).show();
+            Log.w("EditPatientActivity", "Tentativa de apagar paciente sem um ID válido.");
         }
     }
 }

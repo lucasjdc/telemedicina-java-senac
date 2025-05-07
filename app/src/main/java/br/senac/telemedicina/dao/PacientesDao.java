@@ -54,7 +54,7 @@ public class PacientesDao {
 
         values.put("nome", paciente.getNome());
         values.put("idade", paciente.getIdade());
-        values.put("pressao_arterial", paciente.getPressao());
+        values.put("pressao_arterial", paciente.getPressaoArterial());
         values.put("glicose", paciente.getGlicose());
         values.put("colesterol", paciente.getColesterol());
 

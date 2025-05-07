@@ -18,10 +18,18 @@ public class PacientesAdapter extends RecyclerView.Adapter<PacientesAdapter.View
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         public TextView nomeTextView;
+        public TextView idadeTextView;
+        public TextView pressaoTextView;
+        public TextView glicoseTextView;
+        public TextView colesterolTextView;
 
         public ViewHolder(View itemView) {
             super(itemView);
             nomeTextView = itemView.findViewById(R.id.nome_paciente_item);
+            idadeTextView = itemView.findViewById(R.id.idade_paciente_item);
+            pressaoTextView = itemView.findViewById(R.id.pressao_paciente_item);
+            glicoseTextView = itemView.findViewById(R.id.glicose_paciente_item);
+            colesterolTextView = itemView.findViewById(R.id.colesterol_paciente_item);
         }
     }
 
@@ -36,6 +44,10 @@ public class PacientesAdapter extends RecyclerView.Adapter<PacientesAdapter.View
     public void onBindViewHolder(ViewHolder holder, int position) {
         Paciente paciente = pacientes.get(position);
         holder.nomeTextView.setText(paciente.getNome());
+        holder.idadeTextView.setText("Idade: " + paciente.getIdade());
+        holder.pressaoTextView.setText("Pressão arterial: " + paciente.getPressaoArterial());
+        holder.glicoseTextView.setText("Glicose: " + paciente.getGlicose() + " mg/dL");
+        holder.colesterolTextView.setText("Colesterol: " + paciente.getColesterol() + " mg/dL");
     }
 
     @Override
