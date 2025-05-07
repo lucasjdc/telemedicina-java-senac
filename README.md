@@ -22,7 +22,6 @@
   - **/ui**: Interface de usuário.
     - **/activity**: Arquivos de atividades da interface.
     - **/recyclerview.adapter**: Adaptadores para o RecyclerView, responsável por gerenciar dados e visualização na interface.<br>
-  - **/util**: Classes utilitárias.
 - **/res**: Recursos do projeto.
   - **/layout**: Arquivos de layout XML para as telas da interface.
 
@@ -58,7 +57,6 @@ O backend é responsável por gerenciar a lógica da aplicação e persistência
 
 - **Camada DAO (`/dao`)**: Realiza a comunicação com o banco de dados SQLite, incluindo operações de criação, leitura, atualização e exclusão (CRUD).
 - **Banco de dados SQLite**: Configurado no pacote `/database` com as tabelas necessárias para funcionamento do sistema.
-- **Pacote utilitário (`/util`)**: Contém classes auxiliares para validações e manipulação de dados.
 
 Essa estrutura garante o encapsulamento das operações críticas e separação da lógica de negócio da interface.
 
