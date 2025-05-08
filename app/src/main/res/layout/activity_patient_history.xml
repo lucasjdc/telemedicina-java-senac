@@ -1,17 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <TextView
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Patient History"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        android:layout_marginBottom="16dp" />
+        android:layout_height="wrap_content">
 
-    <!-- Exemplo: espaço para uma RecyclerView -->
-</LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Histórico do Paciente"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/editTextPressao"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Pressão Arterial" />
+
+        <EditText
+            android:id="@+id/editTextGlicose"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Glicose" />
+
+        <EditText
+            android:id="@+id/editTextColesterol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Colesterol" />
+
+        <Button
+            android:id="@+id/buttonSalvarHistorico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Salvar Histórico"
+            android:layout_marginTop="16dp" />
+
+        <Button
+            android:id="@+id/buttonVoltar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Voltar"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Histórico Salvo:"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"/>
+
+        <LinearLayout
+            android:id="@+id/historicoContainer"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</ScrollView>
