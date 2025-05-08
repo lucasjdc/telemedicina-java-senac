@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/textViewPacienteId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paciente ID" />
+
+    <TextView
+        android:id="@+id/textViewMedicoId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medico ID" />
+
+    <TextView
+        android:id="@+id/textViewDataConsulta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data Consulta" />
+
+    <TextView
+        android:id="@+id/textViewDiagnostico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Diagnóstico" />
+
+    <TextView
+        android:id="@+id/textViewPrescricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prescrição" />
+</LinearLayout>
