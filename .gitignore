@@ -1,3 +1,4 @@
+# Arquivos de configuração do Android Studio
 *.iml
 .gradle
 /local.properties
@@ -7,9 +8,16 @@
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
+
+# Arquivos do sistema
 .DS_Store
+
+# Diretórios de build
 /build
 /captures
 .externalNativeBuild
 .cxx
+
+# Arquivos locais
 local.properties
+
