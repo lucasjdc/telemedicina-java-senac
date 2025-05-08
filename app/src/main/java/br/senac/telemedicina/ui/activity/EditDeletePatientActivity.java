@@ -9,9 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import br.senac.telemedicina.R;
 import br.senac.telemedicina.database.DBHelper;
 
@@ -24,6 +22,7 @@ public class EditDeletePatientActivity extends AppCompatActivity {
     private EditText colesterolEditText;
     private Button atualizarButton;
     private Button apagarButton;
+    private Button historicoButton;
     private String pacienteId; // Para armazenar o ID do paciente que está sendo editado
 
     @Override
@@ -48,6 +47,7 @@ public class EditDeletePatientActivity extends AppCompatActivity {
         // Obtém referências aos Buttons
         atualizarButton = findViewById(R.id.btn_atualizar_activity_editdeletepatient);
         apagarButton = findViewById(R.id.btn_apagar_activity_editdeletepatient);
+        historicoButton = findViewById(R.id.btn_historico_activity_editdeletepatient);
 
         // Verifica se vieram dados via Intent
         Bundle extras = getIntent().getExtras();
@@ -79,6 +79,16 @@ public class EditDeletePatientActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 apagarPaciente();
+            }
+        });
+
+        historicoButton.setOnClickListener(v -> {
+            if (pacienteId != null) {
+                Intent intent = new Intent(EditDeletePatientActivity.this, PatientHistoryActivity.class);
+                intent.putExtra("id", pacienteId); // Envia o ID do Paciente
+                startActivity(intent);
+            } else {
+                Toast.makeText(EditDeletePatientActivity.this, "ID do paciente não disponível", Toast.LENGTH_SHORT).show();
             }
         });
     }

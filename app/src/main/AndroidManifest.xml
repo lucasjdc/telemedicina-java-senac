@@ -38,6 +38,10 @@
             android:exported="true">
         </activity>
         <activity
+            android:name=".ui.activity.PatientHistoryActivity"
+            android:exported="true">
+        </activity>
+        <activity
             android:name=".ui.activity.MainMenuActivity"
             android:exported="true">
         </activity>

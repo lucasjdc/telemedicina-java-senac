@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
-            android:text="Atualizar ou Deletar Paciente"
+            android:text="Gerenciar Paciente"
             android:textAlignment="center"
             android:textSize="24sp" />
 
@@ -24,7 +24,7 @@
             android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
-            android:text="Name" />
+            android:hint="Nome" />
 
         <EditText
             android:id="@+id/editText_idadePaciente_activity_editdeletepatient"
@@ -33,7 +33,7 @@
             android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
-            android:text="Name" />
+            android:hint="Idade" />
 
         <EditText
             android:id="@+id/editText_pressaoArterial_activity_editdeletepatient"
@@ -42,7 +42,7 @@
             android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
-            android:text="Name" />
+            android:hint="Pressão arterial" />
 
         <EditText
             android:id="@+id/editText_glicose_activity_editdeletepatient"
@@ -51,7 +51,7 @@
             android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
-            android:text="Name" />
+            android:hint="Nível de glicose" />
 
         <EditText
             android:id="@+id/editText_colesterol_activity_editdeletepatient"
@@ -60,7 +60,7 @@
             android:layout_margin="4dp"
             android:ems="10"
             android:inputType="text"
-            android:text="Name" />
+            android:hint="Nível de colesterol" />
 
         <Button
             android:id="@+id/btn_atualizar_activity_editdeletepatient"
@@ -75,5 +75,12 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:text="Deletar Paciente" />
+
+        <Button
+            android:id="@+id/btn_historico_activity_editdeletepatient"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Histórico" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
