@@ -7,9 +7,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.List;
-
 import br.senac.telemedicina.R;
 import br.senac.telemedicina.dao.PacientesDao;
 import br.senac.telemedicina.database.DBHelper;
@@ -43,6 +41,7 @@ public class AddPatientActivity extends AppCompatActivity {
         EditText glicoseEditText = findViewById(R.id.editTextglicose_addpatient);
         EditText colesterolEditText = findViewById(R.id.editTextcolesterol_addpatient);
         Button addButton = findViewById(R.id.btnAddNovoPaciente);
+        Button returnButton = findViewById(R.id.btnVoltar_activity_addpatient);
 
         // RecyclerView
         RecyclerView recyclerView = findViewById(R.id.recyclerViewPacientes);
@@ -81,5 +80,8 @@ public class AddPatientActivity extends AppCompatActivity {
             glicoseEditText.setText("");
             colesterolEditText.setText("");
         });
+
+        returnButton.setOnClickListener(v -> finish());
     }
+
 }

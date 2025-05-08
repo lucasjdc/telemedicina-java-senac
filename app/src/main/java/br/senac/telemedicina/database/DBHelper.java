@@ -15,7 +15,6 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        // Criação da tabela Paciente
         db.execSQL("CREATE TABLE Paciente (" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "nome TEXT NOT NULL, " +
@@ -24,7 +23,6 @@ public class DBHelper extends SQLiteOpenHelper {
                 "glicose TEXT, " +
                 "colesterol TEXT)");
 
-        // Criação da tabela HistoricoPaciente
         db.execSQL("CREATE TABLE HistoricoPaciente (" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "paciente_id INTEGER NOT NULL, " +
@@ -34,19 +32,34 @@ public class DBHelper extends SQLiteOpenHelper {
                 "colesterol TEXT, " +
                 "FOREIGN KEY (paciente_id) REFERENCES Paciente(_id) ON DELETE CASCADE)");
 
-        // Criação da tabela Usuario
         db.execSQL("CREATE TABLE Usuario (" +
                 "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "nome_usuario TEXT UNIQUE NOT NULL, " +
                 "senha_hash TEXT NOT NULL, " +
                 "criado_em TEXT DEFAULT (datetime('now')))");
 
+        db.execSQL("CREATE TABLE Medico (" +
+                "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "nome TEXT NOT NULL, " +
+                "especialidade TEXT, " +
+                "crm TEXT UNIQUE NOT NULL)");
+
+        db.execSQL("CREATE TABLE Consulta (" +
+                "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "paciente_id INTEGER NOT NULL, " +
+                "medico_id INTEGER NOT NULL, " +
+                "data_consulta TEXT NOT NULL, " +
+                "diagnostico TEXT, " +
+                "prescricao TEXT, " +
+                "FOREIGN KEY (paciente_id) REFERENCES Paciente(_id) ON DELETE CASCADE, " +
+                "FOREIGN KEY (medico_id) REFERENCES Medico(_id) ON DELETE CASCADE)");
+
         Log.d("DBHelper", "Tabelas criadas com sucesso");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.d("DBHelper", "Atualizando banco de dados da versão " + oldVersion + " para " + newVersion);
-        // Aqui você pode adicionar lógica para atualizar tabelas se necessário no futuro
+        // Intencionalmente vazio
+        Log.d("DBHelper", "onUpgrade chamado, mas nenhuma alteração necessária");
     }
 }
