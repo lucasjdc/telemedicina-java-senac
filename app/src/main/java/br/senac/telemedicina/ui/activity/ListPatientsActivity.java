@@ -67,7 +67,7 @@ public class ListPatientsActivity extends AppCompatActivity {
                 String glicose = cursor.getString(4);
                 String colesterol = cursor.getString(5);
 
-                nomes.add(nome + " - " + idade + " anos");
+                nomes.add(nome + " (" + idade + ")" + " P: "+ pressao + " G: " + glicose  + "mg/mL C: " + colesterol + " mg/mL");
 
                 HashMap<String, String> paciente = new HashMap<>();
                 paciente.put("id", id);
