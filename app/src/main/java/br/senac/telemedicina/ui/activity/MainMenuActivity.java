@@ -10,6 +10,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
     private Button btnAdd;
     private Button btnEdit;
+    private Button btnRegisterDoctor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class MainMenuActivity extends AppCompatActivity {
 
         btnAdd = findViewById(R.id.btnRegistrarPaciente);
         btnEdit = findViewById(R.id.btnAtualizarDeletar);
+        btnRegisterDoctor = findViewById(R.id.btnCadastrarMedico);
 
         btnAdd.setOnClickListener(v -> {
             Intent intent = new Intent(MainMenuActivity.this, AddPatientActivity.class);
@@ -31,6 +33,11 @@ public class MainMenuActivity extends AppCompatActivity {
 
         btnEdit.setOnClickListener(v -> {
             Intent intent = new Intent(MainMenuActivity.this, ListPatientsActivity.class);
+            startActivity(intent);
+        });
+
+        btnRegisterDoctor.setOnClickListener(v -> {
+            Intent intent = new Intent(MainMenuActivity.this, RegisterNewDoctorActivity.class);
             startActivity(intent);
         });
     }

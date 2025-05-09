@@ -1,59 +1,53 @@
 package br.senac.telemedicina.ui.recyclerview.adapter;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import br.senac.telemedicina.model.Medico;
 import br.senac.telemedicina.R;
 import java.util.List;
 
-public class MedicoAdapter extends BaseAdapter {
-    private Context context;
+public class MedicoAdapter extends RecyclerView.Adapter<MedicoAdapter.MedicoViewHolder> {
     private List<Medico> medicos;
 
-    public MedicoAdapter(Context context, List<Medico> medicos) {
-        this.context = context;
+    public MedicoAdapter(List<Medico> medicos) {
         this.medicos = medicos;
     }
 
+    @NonNull
     @Override
-    public int getCount() {
+    public MedicoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_medico, parent, false);
+        return new MedicoViewHolder(view);
+    }
+
+    @Override
+    public void onBindViewHolder(@NonNull MedicoViewHolder holder, int position) {
+        Medico medico = medicos.get(position);
+        holder.nomeTextView.setText(medico.getNome());
+        holder.especialidadeTextView.setText(medico.getEspecialidade());
+        holder.crmTextView.setText(medico.getCrm());
+    }
+
+    @Override
+    public int getItemCount() {
         return medicos.size();
     }
 
-    @Override
-    public Object getItem(int position) {
-        return medicos.get(position);
-    }
+    public static class MedicoViewHolder extends RecyclerView.ViewHolder {
+        TextView nomeTextView;
+        TextView especialidadeTextView;
+        TextView crmTextView;
 
-    @Override
-    public long getItemId(int position) {
-        return medicos.get(position).getId();
-    }
-
-    @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        // Se convertView for null, inflar o layout
-        if (convertView == null) {
-            LayoutInflater inflater = LayoutInflater.from(context);
-            convertView = inflater.inflate(R.layout.item_medico, parent, false); // Certifique-se de ter o layout item_medico.xml
+        public MedicoViewHolder(@NonNull View itemView) {
+            super(itemView);
+            nomeTextView = itemView.findViewById(R.id.nome_medico);
+            especialidadeTextView = itemView.findViewById(R.id.especialidade_medico);
+            crmTextView = itemView.findViewById(R.id.crm_medico);
         }
-
-        // Obter a instância do Medico da posição
-        Medico medico = medicos.get(position);
-
-        // Referenciar os TextViews e definir seus valores
-        TextView nomeTextView = convertView.findViewById(R.id.nome_medico);
-        TextView especialidadeTextView = convertView.findViewById(R.id.especialidade_medico);
-        TextView crmTextView = convertView.findViewById(R.id.crm_medico);
-
-        nomeTextView.setText(medico.getNome());
-        especialidadeTextView.setText(medico.getEspecialidade());
-        crmTextView.setText(medico.getCrm());
-
-        return convertView;
     }
 }
