@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
@@ -17,6 +18,7 @@ public class ListPatientsActivity extends AppCompatActivity {
     private ListView listView;
     private DBHelper dbHelper;
     private ArrayList<HashMap<String, String>> listaPacientes;
+    private Button btnVoltar;
     private ArrayAdapter<String> adapter; // Mova o ArrayAdapter para ser um membro da classe
 
     @Override
@@ -26,6 +28,7 @@ public class ListPatientsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listar_pacientes);
 
         listView = findViewById(R.id.listViewPacientes);
+        btnVoltar = findViewById(R.id.bt_back_listar_pacientes);
         dbHelper = new DBHelper(this);
 
         listaPacientes = new ArrayList<>(); // Inicialize a lista aqui
@@ -43,6 +46,8 @@ public class ListPatientsActivity extends AppCompatActivity {
             intent.putExtra("colesterol", paciente.get("colesterol")); // Se você adicionou esse campo
             startActivity(intent);
         });
+
+        btnVoltar.setOnClickListener(v -> finish());
     }
 
     @Override
