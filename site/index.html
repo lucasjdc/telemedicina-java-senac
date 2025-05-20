@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Telemedicina</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9ff;
+      color: #333;
+    }
+
+    header {
+      background-color: #eef5fc;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .logo-header {
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+
+    .logo-header h1 {
+      margin: 0;
+      color: #2a2a5c;
+      font-size: 1.8rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #2a2a5c;
+      font-weight: bold;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      transition: background 0.3s;
+      border-radius: 8px;
+    }
+
+    nav a:hover {
+      background-color: #dce9ff;
+    }
+
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(120deg, #e6f2fc, #e8e7f6);
+      border-radius: 12px;
+      margin: 2rem auto;
+    }
+
+    .hero h2 {
+      color: #2a2a5c;
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin: 1rem 0;
+    }
+
+    .hero button {
+      background-color: #8a7cf6;
+      color: white;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    h2 {
+      color: #2a2a5c;
+      margin-bottom: 1rem;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .partners img {
+      max-height: 60px;
+      margin: 1rem;
+    }
+
+    .partners, .success-stories {
+      text-align: center;
+    }
+
+    .success-stories blockquote {
+      background-color: #ede7f6;
+      padding: 1rem;
+      border-radius: 8px;
+      font-style: italic;
+      margin: 1rem auto;
+      max-width: 700px;
+    }
+
+    .location-contact {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .location, .contact {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .mapa {
+      background-color: #d6f3f1;
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      background-color: #eef5fc;
+      color: #666;
+      margin-top: 2rem;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .location-contact {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo-header">
+      <h1>Telemedicina</h1>
+    </div>
+    <nav>
+      <a href="#sobre">Sobre Nós</a>
+      <a href="#parceiros">Nossos Parceiros</a>
+      <a href="#sucesso">Casos de Sucesso</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Consultas médicas online & gerenciamento</h2>
+    <p>Atendimento rápido e fácil com médicos profissionais.</p>
+    <button onclick="location.href='agendamento.html'">Agendar consulta</button>
+  </section>
+
+  <section id="sobre" class="about">
+    <h2>Sobre Nós</h2>
+    <p>
+      Fundada em 2022, a <strong>Telemedicina</strong> nasceu com o propósito de tornar a saúde mais acessível para todos,
+      independentemente da localização. Utilizando tecnologia de ponta, conectamos pacientes com médicos especializados,
+      oferecendo atendimento seguro, rápido e de qualidade. Estamos transformando o cuidado com a saúde no Brasil com uma
+      abordagem digital, humana e eficiente.
+    </p>
+  </section>
+
+  <section id="parceiros" class="partners">
+    <h2>Nossos Parceiros</h2>
+    <img src="img/sulamerica.png" alt="SulAmerica">
+    <img src="img/portosaude.png" alt="Porto Saúde" style="height: 45px;">
+    <img src="img/bradescosaude.png" alt="Bradesco Saúde" style="height: 40px;">
+    <img src="img/mediservice.png" alt="Mediservice" style="height: 40px;">
+    <img src="img/unimed.png" alt="Unimed">
+  </section>
+
+  <section id="sucesso" class="success-stories">
+    <h2>Casos de Sucesso</h2>
+    <blockquote>
+      "Consegui atendimento com um cardiologista em menos de 2 horas! Atendimento excelente e sem sair de casa."
+      <br><br>– João M.
+    </blockquote>
+    <blockquote>
+      "A Telemed Consultas me ajudou em um momento crítico com uma médica super empática. Recomendo demais!"
+      <br><br>– Fernanda T.
+    </blockquote>
+  </section>
+
+  <section id="contato" class="location-contact">
+    <div class="location">
+      <h2>Localização</h2>
+      <div class="mapa">Belo Horizonte - MG</div>
+    </div>
+    <div class="contact">
+      <h2>Contato</h2>
+      <p>Email: contato@telemedconsultas.com</p>
+      <p>Telefone: (31) 1234-5678</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Telemedicina. Todos os direitos reservados.
+  </footer>
+
+</body>
+</html>
