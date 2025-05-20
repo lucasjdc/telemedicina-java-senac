@@ -66,6 +66,18 @@ Essa estrutura garante o encapsulamento das operações críticas e separação 
 
 Os modelos de dados estão localizados no pacote `/model` e representam as principais entidades do sistema de telemedicina, como:
 
+---
+
+## Vídeo de Apresentação
+
+A demonstração do funcionamento do aplicativo Telemedicina está disponível no YouTube:
+
+🔗 [Apresentação do Projeto Telemedicina](https://youtube.com/shorts/Hk_ZOYewJ20?feature=share)
+
+Este vídeo mostra as principais funcionalidades da aplicação, com foco na navegação, cadastro de pacientes e histórico médico.
+
+---
+
 - `Paciente`
 
 Cada classe modelo contém atributos correspondentes às colunas do banco de dados e são utilizadas tanto no backend quanto no frontend para exibir ou manipular informações do sistema.
