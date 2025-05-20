@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Agendar Consulta - Telemed Consultas</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f5f9ff;
+      color: #333;
+      padding: 2rem;
+    }
+
+    h1 {
+      text-align: center;
+      color: #2a2a5c;
+    }
+
+    form {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    label {
+      display: block;
+      margin-top: 1.2rem;
+      font-weight: bold;
+    }
+
+    input, select, textarea, button {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    #descricaoOutros {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    button {
+      background-color: #8a7cf6;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 2rem;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #6c62e0;
+    }
+
+    #mensagem {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #e6f5ec;
+      border: 1px solid #b6e1c5;
+      border-radius: 12px;
+      color: #2a6b47;
+      font-size: 1.2rem;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Agendamento de Consulta</h1>
+
+  <form id="formularioConsulta">
+    <label for="nome">Nome completo</label>
+    <input type="text" id="nome" name="nome" required>
+
+    <label for="email">E-mail</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="exame">Tipo de Exame</label>
+    <select id="exame" name="exame" required>
+      <option value="">-- Selecione --</option>
+      <option value="sangue">Exame de Sangue</option>
+      <option value="covid">Exame de Covid</option>
+      <option value="dengue">Exame de Dengue</option>
+      <option value="betahcg">Exame Beta HCG</option>
+      <option value="outros">Outros</option>
+    </select>
+
+    <div id="descricaoOutros">
+      <label for="descricao">Descrição do exame que deseja</label>
+      <textarea id="descricao" name="descricao" rows="3"></textarea>
+    </div>
+
+    <label for="localizacao">Localização desejada</label>
+    <select id="localizacao" name="localizacao" required>
+      <option value="">-- Escolha uma cidade --</option>
+      <option value="sp">São Paulo</option>
+      <option value="osasco">Osasco</option>
+      <option value="saocaetano">São Caetano do Sul</option>
+      <option value="sjcampos">São José dos Campos</option>
+    </select>
+
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="mensagem">
+    Recebemos sua solicitação e estamos contentes em te ajudar. Em breve entraremos em contato.
+  </div>
+
+  <script>
+    const exameSelect = document.getElementById("exame");
+    const descricaoOutros = document.getElementById("descricaoOutros");
+    const form = document.getElementById("formularioConsulta");
+    const mensagem = document.getElementById("mensagem");
+
+    exameSelect.addEventListener("change", () => {
+      descricaoOutros.style.display = exameSelect.value === "outros" ? "block" : "none";
+    });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      form.style.display = "none";
+      mensagem.style.display = "block";
+    });
+  </script>
+
+</body>
+</html>
