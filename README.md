@@ -73,13 +73,12 @@ Cada classe modelo contém atributos correspondentes às colunas do banco de dad
 
 ---
 
----
 
 ## Vídeo de Apresentação
 
 A demonstração do funcionamento do aplicativo Telemedicina está disponível no YouTube:
 
-🔗 [Apresentação do Projeto Telemedicina](https://youtube.com/shorts/Hk_ZOYewJ20?feature=share)
+🔗 [Apresentação do Projeto Telemedicina](https://youtube.com/shorts/yIkcH_h4zR8?feature=share)
 
 Este vídeo mostra as principais funcionalidades da aplicação, com foco na navegação, cadastro de pacientes e histórico médico.
 
