@@ -83,3 +83,7 @@ A demonstração do funcionamento do aplicativo Telemedicina está disponível n
 Este vídeo mostra as principais funcionalidades da aplicação, com foco na navegação, cadastro de pacientes e histórico médico.
 
 ---
+
+## Landing Page
+
+🔗 [Acesse a Landing Page do Projeto Telemedicina](https://cl0ud-c1sc0.github.io/telemedproject/)
