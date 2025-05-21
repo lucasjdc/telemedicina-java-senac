@@ -25,6 +25,10 @@ public class Consulta {
         this.prescricao = prescricao;
     }
 
+    public Consulta() {
+        // Construtor vazio, usado para criar um objeto sem inicializar com valores.
+    }
+
     // Getters e Setters
     public int getId() {
         return id;

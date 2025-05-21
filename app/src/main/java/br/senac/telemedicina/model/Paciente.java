@@ -17,6 +17,10 @@ public class Paciente {
         this.colesterol = colesterol;
     }
 
+    public Paciente() {
+        // Construtor vazio, usado para criar um objeto sem inicializar com valores.
+    }
+
     public Paciente(String nome, int idade, String pressao, String glicose, String colesterol) {
         this.nome = nome;
         this.idade = idade;
@@ -51,5 +55,13 @@ public class Paciente {
     @Override
     public String toString() {
         return nome + "-" + idade + " anos";
+    }
+
+    public void setNome(String novoPaciente) {
+        this.nome = novoPaciente;
+    }
+
+    public void setIdade(int idadePaciente) {
+        this.idade = idadePaciente;
     }
 }

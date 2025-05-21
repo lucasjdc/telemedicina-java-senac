@@ -11,6 +11,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button btnAdd;
     private Button btnEdit;
     private Button btnRegisterDoctor;
+    private Button btnScheduleAppointment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainMenuActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btnRegistrarPaciente);
         btnEdit = findViewById(R.id.btnAtualizarDeletar);
         btnRegisterDoctor = findViewById(R.id.btnCadastrarMedico);
+        btnScheduleAppointment = findViewById(R.id.btnAgendarConsulta);
 
         btnAdd.setOnClickListener(v -> {
             Intent intent = new Intent(MainMenuActivity.this, AddPatientActivity.class);
@@ -38,6 +40,11 @@ public class MainMenuActivity extends AppCompatActivity {
 
         btnRegisterDoctor.setOnClickListener(v -> {
             Intent intent = new Intent(MainMenuActivity.this, RegisterNewDoctorActivity.class);
+            startActivity(intent);
+        });
+
+        btnScheduleAppointment.setOnClickListener(v -> {
+            Intent intent = new Intent(MainMenuActivity.this, DoctorListActivity.class);
             startActivity(intent);
         });
     }
